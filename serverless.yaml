@@ -14,7 +14,12 @@ plugins:
   - serverless-offline
   
 custom: 
+  serviceId: ${self:service}-${self:provider.stage}
   config: ${file(config/${self:provider.stage}.json), file(config/default.json)}
+  staging:
+    branch: develop
+  production:
+    branch: masters
 
 package:
   include:

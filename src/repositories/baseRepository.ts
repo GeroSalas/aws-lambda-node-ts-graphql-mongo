@@ -13,23 +13,23 @@ export abstract class BaseRepository<T extends Document> {
         this._model = schemaModel
     }
 
-    create(item: T[]): Promise<Document[]> {
+    public create(item: T[]): Promise<Document[]> {
         return this._model.create(item)
     }
 
-    retrieve(): Promise<Document[]> {
+    public retrieve(): Promise<Document[]> {
         return this._model.find({}).exec()
     }
 
-    update(_id: string, item: T): Promise<Query<any>> {
+    public update(_id: string, item: T): Promise<Query<any>> {
         return this._model.update({ _id }, item).exec()
     }
 
-    delete(_id: string): Promise<Document> {
+    public delete(_id: string): Promise<Document> {
         return this._model.remove({ _id }).exec()
     }
 
-    findById(_id: string): Promise<Document|null> {
+    public findById(_id: string): Promise<Document|null> {
         return this._model.findById(_id).exec()
     }
 

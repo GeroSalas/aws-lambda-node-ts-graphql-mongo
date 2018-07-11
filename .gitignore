@@ -37,6 +37,7 @@ jspm_packages
 dist
 build
 .build
+.dist
 
 # vscode
 .vscode

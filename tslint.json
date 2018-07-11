@@ -1,7 +1,7 @@
 {
   "defaultSeverity": "error",
   "extends": [
-      "tslint:recommended"
+      "tslint:recommended" // https://github.com/palantir/tslint/blob/master/src/configs/recommended.ts
   ],
   "jsRules": {},
   "rules": {
