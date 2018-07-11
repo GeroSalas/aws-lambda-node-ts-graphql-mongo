@@ -1,0 +1,9 @@
+{
+	"query": "mutation ping($input: PingTest!) { pingM(input: $input) {result message} }",
+	"variables": {
+		"input": {
+			"message": "Hello World!"
+		}	
+	}
+}
+  

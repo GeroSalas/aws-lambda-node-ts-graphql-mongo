@@ -1,0 +1,47 @@
+# https://serverless.com/framework/docs/providers/aws/guide/serverless.yml/
+
+service: 
+  name: CleanUp-API
+
+provider:
+  name: aws
+  runtime: nodejs6.10
+  stage: ${opt:stage, 'local'}
+  profile: ${self:custom.config.profile}
+
+plugins:
+  - serverless-plugin-typescript
+  - serverless-offline
+  
+custom: 
+  config: ${file(config/${self:provider.stage}.json), file(config/default.json)}
+
+package:
+  include:
+    - config/*
+
+functions:
+  CleanupAPI:
+    handler: src/index.handler
+    memorySize: 128
+    timeout: 60
+
+    environment:
+      STAGE: ${self:provider.stage}
+      LOGGING_LEVEL: ${self:custom.config.logging.level}
+      CLEANUP_DATABASE_HOST: ${self:custom.config.db.host}
+      CLEANUP_DATABASE_PORT: ${self:custom.config.db.port}
+      CLEANUP_DATABASE_NAME: ${self:custom.config.db.name}
+      CLEANUP_DATABASE_USER: ${self:custom.config.db.user}
+      CLEANUP_DATABASE_PASSWORD: ${self:custom.config.db.password}
+
+    events:
+      - http:
+          path: /
+          method: post
+          cors: true
+
+      - http:
+          path: /
+          method: get
+          cors: true

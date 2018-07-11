@@ -1,0 +1,13 @@
+{
+    "db": {
+        "host": "CLEANUP_DATABASE_HOST",
+        "port": "CLEANUP_DATABASE_PORT",
+        "name": "CLEANUP_DATABASE_NAME",
+        "user": "CLEANUP_DATABASE_USER",
+        "password": "CLEANUP_DATABASE_PASSWORD",
+        "region": "CLEANUP_DATABASE_REGION"
+    },
+    "logging": {
+        "level": "LOGGING_LEVEL"
+    }
+}
