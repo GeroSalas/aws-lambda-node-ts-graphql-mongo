@@ -1,6 +1,6 @@
-# CleanUP - API
+# Sample - API
 
-This repository has the major components of the API (core microservice). This repo provides API support for the CleanUp platform.
+This repository has the major components of the API (core microservice). This repo provides API support for the XXX platform.
 
 ## Serverless AWS
 This code is hosted using [AWS Lambdas](https://aws.amazon.com/lambda/) and deployed using [AWS CodePipeline](https://aws.amazon.com/codepipeline) with [Serverless Framework](https://serverless.com/framework/docs/providers/aws/).
