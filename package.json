@@ -10,7 +10,9 @@
     "ci": "npm run test && npm run lint",
     "sls:invoke": "sls invoke local --function CleanupAPI --data '{}'",
     "sls:dev": "sls offline start --skipCacheInvalidation",
-    "sls:debug": "export SLS_DEBUG=* && node --debug ./node_modules/.bin/sls offline start --noTimeout --skipCacheInvalidation --stage=local"
+    "sls:debug": "export SLS_DEBUG=* && node --debug ./node_modules/.bin/sls offline start --noTimeout --skipCacheInvalidation --stage=local",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -25,7 +27,8 @@
     "mongoose": "^5.2.1",
     "uuid": "3.1.0",
     "uuid-validate": "0.0.2",
-    "winston": "^3.0.0"
+    "winston": "^3.0.0",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "@types/aws-lambda": "^8.10.7",
@@ -55,5 +58,6 @@
     "tslint": "^5.9.1",
     "typescript": "^2.5.3",
     "typescript-eslint-parser": "^8.0.0"
-  }
+  },
+  "snyk": true
 }
