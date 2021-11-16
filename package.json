@@ -19,7 +19,7 @@
   "author": "engineering@prolabs.io",
   "license": "ISC",
   "dependencies": {
-    "aws-sdk": "^2.123.0",
+    "aws-sdk": "^2.814.0",
     "config": "^1.28.0",
     "graphql": "^0.11.7",
     "mongoose": "^5.2.1",
